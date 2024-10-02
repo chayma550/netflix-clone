@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import "./Login.scss";
 import { login } from "../../authContext/ApiCalls";
 import { AuthContext } from "../../authContext/AuthContext";
+import { useHistory } from "react-router-dom";
 
 export default function Login() {
   const[email,setEmail]=useState("")
@@ -12,6 +13,9 @@ export default function Login() {
   const handleLogin=(e)=>{
     e.preventDefault();
     login({email,password},dispatch)  
+    history.push("/");
+
+
   }
   
   return (
