@@ -8,7 +8,7 @@ import ListItem from "../../components/ListItem/ListItem"
 export default function List({list}) {
   const [isMoved, setIsMoved] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
-  const [clickLimit, setClickLimit] = useState(window.innerWidth / 230);
+  const [clickLimit] = useState(window.innerWidth / 230);
 
 
   const listRef = useRef();

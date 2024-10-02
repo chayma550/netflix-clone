@@ -14,7 +14,6 @@ const Navbar = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
   };
-  const currentUser=JSON.parse(localStorage.getItem("currentUser"))
 
   return (
     <div className={isScrolled ? "navbar scrolled" : "navbar"}>
