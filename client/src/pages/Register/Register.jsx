@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { Link} from "react-router-dom";
 import newRequest from '../../utils/newRequest';
 import "./Register.scss";
 import { useHistory } from "react-router-dom";
