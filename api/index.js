@@ -16,13 +16,17 @@ console.log("DB connecting ")).catch((err)=>{
   console.log(err)  
 })
 
-app.use(cors({origin:"http://localhost:3000",credentials:true}));
-
+// Configure CORS
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || "http://localhost:3000", // Allow requests from your frontend
+  credentials: true,
+};
+app.use(cors(corsOptions)); // This line was missing
 app.use("/api/auth",AuthRoute)
 app.use("/api/users",userRoute)
 app.use("/api/movies",movieRoute)
 app.use("/api/lists",listRoute)
-app.listen(process.env.PORT||5000,()=>{
-    console.log("server is runing on port 5000!!")
+app.listen(process.env.PORT||8000,()=>{
+    console.log("server is runing on port 8000!!")
 })
 
