@@ -30,7 +30,7 @@ app.use("/api/auth",AuthRoute)
 app.use("/api/users",userRoute)
 app.use("/api/movies",movieRoute)
 app.use("/api/lists",listRoute)
-app.listen(process.env.PORT||5000,()=>{
-    console.log("server is runing on port 5000!!")
+app.listen(process.env.PORT||8000,()=>{
+    console.log("server is runing on port 8000!!")
 })
 
