@@ -3,7 +3,7 @@ import "./Home.scss"
 import Navbar from "../../components/Navbar/Navbar";
 import Featured from '../../components/Featured/Featured';
 import List from '../../components/List/List';
-import axios from 'axios';
+import newRequest from '../../utils/newRequest';
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
@@ -11,7 +11,7 @@ const Home = ({ type }) => {
   useEffect(() => {
     const getRandomLists = async () => {
       try {
-        const res = await axios.get(
+        const res = await newRequest.get(
           `lists${type ? "?type=" + type : ""}${
             genre ? "&genre=" + genre : ""
           }`,

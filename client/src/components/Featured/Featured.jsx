@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import "./Featured.scss"
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import axios from 'axios';
+import newRequest from '../../utils/newRequest';
 export default function Featured({type,setGenre}) {
 const[content,setContent]=useState({});
 
 useEffect(()=>{
 const getRandomContent=async()=>{
   try{
-    const res=await axios.get(`/movies/random?type=${type}`, {
+    const res=await newRequest.get(`/movies/random?type=${type}`, {
       headers:{
         token:
         "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,

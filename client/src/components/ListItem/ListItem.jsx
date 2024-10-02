@@ -5,8 +5,8 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import newRequest from "../../utils/newRequest";
 
 export default function ListItem({ index,item }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,7 +14,7 @@ export default function ListItem({ index,item }) {
     useEffect(()=>{
     const getMovie=async()=>{
       try{
-         const res=await axios.get("/movies/find/"+ item,{
+         const res=await newRequest.get("/movies/find/"+ item,{
           headers:{
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,

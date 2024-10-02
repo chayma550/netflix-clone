@@ -2,8 +2,8 @@ import React from 'react'
 import "./Register.scss"
 import { useRef } from "react";
 import { useState } from "react";
-import axios from 'axios';
 import { Link, useHistory } from "react-router-dom";
+import newRequest from '../../utils/newRequest';
 export default function Register() {
   const history=useHistory()
 
@@ -24,7 +24,7 @@ export default function Register() {
     setUsername(usernameRef.current.value);
 
     try{
-      await axios.post("auth/register",{email,username,password});
+      await newRequest.post("auth/register",{email,username,password});
       history.push("/login")
     }catch(err){
       console.log(err)
