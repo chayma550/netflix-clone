@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import newRequest from '../../utils/newRequest';
 import "./Register.scss";
+import { useNavigate } from "react-router";
 
 export default function Register() {
   const navigate = useNavigate();
